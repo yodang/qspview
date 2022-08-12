@@ -11,8 +11,11 @@ std::string QSPStringToStd(const std::vector<char>& data, bool coded)
     r.reserve(data.size()/2);
 
     for(auto i=0;i<data.size(); i+=2)
-        r.push_back(data[i]+(coded?QSP_CODE_OFFSET:0));//can overflow
-
+    {
+        auto c=data[i]+(coded?QSP_CODE_OFFSET:0);//can overflow
+        if(c!='\r')
+            r.push_back(c);
+    }
     return r;
 }
 
