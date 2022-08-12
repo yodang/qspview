@@ -16,6 +16,6 @@ find_package(Qt5 REQUIRED COMPONENTS Widgets)
 
 #add_executable(qspview src/qsp.cpp)
 
-add_executable(qspgui src/main.cpp src/gui.cpp src/qsp.cpp)
+add_executable(qspgui src/main.cpp src/gui.cpp src/searchdialog.cpp src/qsp.cpp)
 
 target_link_libraries(qspgui PRIVATE Qt5::Widgets)
